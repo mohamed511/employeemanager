@@ -7,6 +7,7 @@ import tech.getarrays.employeemanager.model.Employee;
 import tech.getarrays.employeemanager.service.EmployeeService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/employee")
@@ -43,7 +44,8 @@ public class EmployeeResource {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteEmployee(@PathVariable("id") Long id) {
-        employeeService.deleteEmployee(id);
+        Employee emp = employeeService.findEmployeeById(id);
+        employeeService.deleteEmployee(emp);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
