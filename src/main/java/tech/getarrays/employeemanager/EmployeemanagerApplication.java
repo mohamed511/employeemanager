@@ -9,6 +9,7 @@ public class EmployeemanagerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EmployeemanagerApplication.class, args);
 		System.out.println("Started...");
+		System.out.println("App Running...");
 	}
 
 }
